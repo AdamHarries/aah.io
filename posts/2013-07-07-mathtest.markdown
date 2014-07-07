@@ -1,0 +1,22 @@
+---
+title: Mathjax test
+---
+
+#A short test for mathjax
+
+This file is just a short test to make sure that mathjax is installed correctly!
+
+$$ \frac{n!}{k!(n-k)!} = \binom{n}{k} $$
+
+
+$$
+A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+  a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+ \end{pmatrix}
+$$
+
+How does inline maths work? Does it work here ($z=x^{y+2}$) for example?
