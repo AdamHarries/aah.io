@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	font-family: Vollkorn, Georgia, Times, serif;
+	font-family: 'Lora', Georgia, Times, serif;
 	font-size: 15px;
 	color: #333;
     width: 663px;
@@ -30,6 +30,7 @@ body {
 }*/
 
 h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -93,7 +94,7 @@ pre {
 	margin-bottom: 0px;
 }
 .author, .date {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	display: inline-block;
 	color: #777;
