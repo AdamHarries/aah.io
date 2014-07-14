@@ -21,13 +21,9 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.md", "contact.md"]) $ do
-        -- route   $ setExtension "html"
-        route $ niceRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-            >>= removeIndexHtml
+    match "js/*" $ do
+        route idRoute
+        compile copyFileCompiler
 
     match "posts/*.md" $ do
         route $ niceRoute
@@ -38,38 +34,71 @@ main = hakyll $ do
             >>= relativizeUrls
             >>= removeIndexHtml
 
-    create ["archive.html"] $ do
+    create ["blog.html"] $ do
         -- route idRoute
         route $ niceRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-            let archiveCtx =
+            let blogCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    constField "title" "Blog"            `mappend`
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/blog/blog.html" blogCtx
+                >>= loadAndApplyTemplate "templates/default.html" blogCtx
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
+    create ["code.html"] $ do
+        -- route idRoute
+        route $ niceRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll "posts/*"
+            let codeCtx =
+                    listField "posts" postCtx (return posts) `mappend`
+                    constField "title" "Code"            `mappend`
+                    defaultContext
 
-    match "index.html" $ do
-        route idRoute
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/code/code.html" codeCtx
+                >>= loadAndApplyTemplate "templates/default.html" codeCtx
+                >>= relativizeUrls
+                >>= removeIndexHtml 
+
+    match "about.md" $ do 
+        route $ niceRoute
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+            >>= removeIndexHtml
+
+    match "cv.md" $ do
+        route $ niceRoute
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
+            >>= relativizeUrls
+            >>= removeIndexHtml
+
+    match "index.md" $ do
+        route $ setExtension "html"
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     defaultContext
 
-            getResourceBody
+            pandocCompiler
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
                 >>= removeIndexHtml
 
     match "templates/*" $ compile templateCompiler
+
+    match "templates/blog/*" $ compile templateCompiler
+
+    match "templates/code/*" $ compile templateCompiler
 
 
 --------------------------------------------------------------------------------

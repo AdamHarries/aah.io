@@ -4,7 +4,6 @@ all:
 	./site watch
 
 clean:
-	rm -rf _cache
-	rm -rf _site
+	./site clean
 	rm -rf site
 	rm -rf site.hi

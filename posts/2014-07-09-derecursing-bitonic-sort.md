@@ -2,11 +2,19 @@
 title: Derecursing bitonic sort
 ---
 
+Here is an inline note.^[Inlines notes are easier to write, since
+you don't have to pick an identifier and move down to type the
+note.]
+
+
+
 Sorting and searching algorithms are two of the most common areas covered at the start of an undergraduate course in computer science. Traditionally, when covering sorting, such a course might start with bubble sort, before moving on to, say, insertion sort
 
 As part of m
 
 Cuda code to swap within the array
+
+[link to something here, just in case](http://www.example.com)
 
 ```C
 // performs swap within array 
