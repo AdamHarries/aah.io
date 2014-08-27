@@ -12,11 +12,21 @@ Sorting and searching algorithms are two of the most common areas covered at the
 
 As part of m
 
+Bitonic sort traditionally displayed in a network - i.e. lines of computation. Useful for parallel computation, but not for figuring out which processors should be swapping what. Also - recursive version not great for that either! Instead, consider it as sort on hypercube. Use dimensions of hypercube to calculate what should be swapping, and where.
+
+The first comparator index for a swap is given by:
+
+$$ C_i = 2i - i \bmod s $$
+
+And the direction of comparison, which is either $1$ or $0$, for sorting up or down is given by:
+
+$$ D_i = ({i \over {S_s / 2}}  \bmod  S_c) \bmod 2 $$
+
 Cuda code to swap within the array
 
 [link to something here, just in case](http://www.example.com)
 
-```C
+``` C
 // performs swap within array 
 __global__ void swap(int *arr, int sls, int slc, int step_size)
 {
@@ -36,7 +46,7 @@ __global__ void swap(int *arr, int sls, int slc, int step_size)
 }
 ```
 
-```C
+``` C
 for(sls=2;sls<=n; sls*=2)
 {
 	//loop over swap distances

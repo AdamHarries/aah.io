@@ -25,20 +25,26 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
-    match "posts/*.md" $ do
+    match "blog/*.md" $ do
         route $ niceRoute
-        -- route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/blog/blog-post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+            >>= removeIndexHtml
+
+    match "code/*.md" $ do
+        route $ niceRoute
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/code/code-post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= removeIndexHtml
 
     create ["blog.html"] $ do
-        -- route idRoute
         route $ niceRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll "blog/*"
             let blogCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Blog"            `mappend`
@@ -51,10 +57,9 @@ main = hakyll $ do
                 >>= removeIndexHtml
 
     create ["code.html"] $ do
-        -- route idRoute
         route $ niceRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- loadAll "code/*"
             let codeCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Code"            `mappend`
