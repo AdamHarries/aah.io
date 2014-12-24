@@ -1,7 +1,7 @@
 ---
 title: Thoughts on Durham university
 ---
-Thoughts on Durham university as a recently graduated student.
+<!-- # Thoughts on Durham university as a recently graduated student. -->
 
 As a recent graduate of Durham University, my experiences and thoughts on the institution and its people are still very fresh and raw. I thought I'd better get my thoughts about my experience down in code, before it all leaves me. Durham is a very interesting university, with manny different and contrasting aspects. To try and tackle this, I've split my thoughts on it into a number of sections:
 

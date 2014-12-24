@@ -1,3 +1,7 @@
+---
+title: What is computer science?
+---
+
 http://juliepagano.com/blog/2014/07/15/when-twitter-fails-math-and-programming-edition/
 
 

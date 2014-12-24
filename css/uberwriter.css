@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	font-family: 'Lora', Georgia, Times, serif;
+	font-family: 'Palatino Linotype',Georgia, Times, serif; /*'Lora',*/
 	font-size: 15px;
 	color: #101010;
     width: 663px;
@@ -24,6 +24,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
 #content {
 	background-color: #FFFFFF;
 	padding: 10px 20px 20px 20px;
@@ -54,7 +55,7 @@ a:active{
 }*/
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif; /*'Open Sans', */
 }
 
 h1 {
@@ -108,7 +109,7 @@ ol li, ul li{
 	margin-bottom: 0px;
 }
 .author, .date {
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif; /*'Open Sans',*/
 	font-size: 14px;
 	display: inline-block;
 	color: #777;
@@ -146,7 +147,7 @@ div#header #navigation a {
     font-weight: bold;
     margin-left: 12px;
     text-decoration: none;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 div#footer {
@@ -186,7 +187,7 @@ td.sourceCode { padding-left: 5px; }
 .sourceCode span.er { color: red; font-weight: bold; }
 
 code {
-	font-family: 'Fantasque Sans Mono', monospace;
+	font-family: monospace; /*'Fantasque Sans Mono',*/ 
 	font-size: 16px;
 }
 

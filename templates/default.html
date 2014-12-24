@@ -5,29 +5,37 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>$title$ - aah.io</title>
-         <link href='http://fonts.googleapis.com/css?family=Lora|Open+Sans' rel='stylesheet' type='text/css'>
-         <link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/fantasque-sans-mono" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="/css/uberwriter.css" />
-        <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-        <script src="/js/trianglify.js"></script>
+        <!-- <link href='http://fonts.googleapis.com/css?family=Lora|Open+Sans' rel='stylesheet' type='text/css'> -->
+        <!-- <link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/fantasque-sans-mono" rel="stylesheet" type="text/css"/>-->
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
     </head>
     <body>
-        <div id="content">
+        <div id="wrapper">
             <div id="header">
-                <div id="navigation">
-                    <a href="/">Home</a>
-                    <a href="/about/">About</a>
-                    <a href="/cv/">CV</a>
-                    <a href="/code/">Code</a>
-                    <a href="/blog/">Blog</a>
-                </div>
+                
+                <img id="meImg" src="/images/me2.jpg" width=170/>
+                <div id="text">Online Babblings</div>
+                <!-- <table id="links" style="border-collapse: collapse; margin-left:auto; margin-right:auto; width:100%;"> -->
+                    <!-- <tr><td id="internal" style="border: solid 1px #AAAAAA; border-top: 0;border-bottom: 0;border-left: 0; width:50%;"> -->
+                        <div id="links">
+                                <a href="/">Home/About</a> <br/>
+                                <a href="/cv/">CV</a><br/>
+                                <a href="/code/">Parsable</a><br/>
+                                <a href="/blog/">Unparsable</a><br/>
+                        </div>
+                    <!-- </td><td id="external" style="width:50%;"> -->
+                        <!-- <div id="external"> -->
+                        <!-- <div style="text-decoration:underline;">External links</div> -->
+                            <!-- <a href="github.com">Github</a><br/> -->
+                            <!-- <a href="mailto:someone">Email #1</a><br/> -->
+                            <!-- <a href="mailto:someone">Email #2</a><br/> -->
+                            <!-- <a href="https://pgp.mit.edu/pks/lookup?op=vindex&search=0x948B2C500081A3C4">PGP Key</a><br/> -->
+                        <!-- </div> -->
+                    <!-- </td></tr> -->
+                <!-- </table> -->
             </div>
-
+            <div id="title">$title$</div>
             <div id="content">
-                <h1>$title$</h1>
-
                 $body$
             </div>
             <div id="footer">
@@ -35,12 +43,14 @@
                     א
                 </div>
                 <div id="fr">
-                    Site generated using
-                    <a href="http://jaspervdj.be/hakyll">Hakyll</a>, from source on <a href="https://github.com/AdamHarries/aah.io">Github</a>, and a background from <a href="http://qrohlf.com/trianglify/">Trianglify</a>
+                    Site generated using <a href="http://jaspervdj.be/hakyll">Hakyll</a>, from source on <a href="https://github.com/AdamHarries/aah.io">Github</a>
                 </div>
             </div>
         </div>
-         <script type="text/javascript" src="/js/background.js">
-         </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <!-- and a background from <a href="http://qrohlf.com/trianglify/">Trianglify</a> -->
+        <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="/js/trianglify.js"></script>
+        <script type="text/javascript" src="/js/background.js"></script> -->
     </body>
 </html>

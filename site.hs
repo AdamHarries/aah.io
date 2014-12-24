@@ -25,6 +25,10 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
+    match "css/fonts/*" $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "blog/*.md" $ do
         route $ niceRoute
         compile $ pandocCompiler
@@ -71,12 +75,12 @@ main = hakyll $ do
                 >>= relativizeUrls
                 >>= removeIndexHtml 
 
-    match "about.md" $ do 
-        route $ niceRoute
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-            >>= removeIndexHtml
+    --match "about.md" $ do 
+    --    route $ niceRoute
+    --    compile $ pandocCompiler
+    --        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+    --        >>= relativizeUrls
+    --        >>= removeIndexHtml
 
     match "cv.md" $ do
         route $ niceRoute
@@ -111,6 +115,7 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
+
 
 -- Route to simplify URL. I.e. of form http://aah.io/post/title-of-post/
 niceRoute :: Routes

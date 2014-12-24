@@ -30,7 +30,8 @@ Cuda code to swap within the array
 // performs swap within array 
 __global__ void swap(int *arr, int sls, int slc, int step_size)
 {
-	//get index of comparison (ie, we always have len(arr) comparisons, which one are we?)
+	//get index of comparison (ie, we always have len(arr)
+	//comparisons, which one are we?)
 	int cid = threadIdx.x;
 	//get index of first comparison element
 	int aid = ((cid*2)-(cid%(step_size)));
@@ -59,7 +60,8 @@ for(sls=2;sls<=n; sls*=2)
 		cudaError_t err = cudaThreadSynchronize();
 		//get errors with synchronisation
 		if( err != cudaSuccess)
-			printf("cudaThreadSynchronize error: %s\n", cudaGetErrorString(err));	
+			printf("cudaThreadSynchronize error: %s\n", \
+			cudaGetErrorString(err));	
 	}		
 }
 ```
