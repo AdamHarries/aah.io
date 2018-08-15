@@ -12,7 +12,7 @@ import           System.FilePath.Posix  (takeBaseName,takeDirectory
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = hakyllWith config $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -44,6 +44,11 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= removeIndexHtml
+
+    match "code/source/*" $ do
+        route $ idRoute
+        compile copyFileCompiler
+
 
     create ["blog.html"] $ do
         route $ niceRoute
@@ -111,6 +116,12 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+-- site configuration
+config :: Configuration
+config = defaultConfiguration
+        {  deployCommand = "rsync -avz -e ssh ./_site/ aharries_adamharries@ssh.phx.nearlyfreespeech.net:/home/public/"  }
+
+
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`

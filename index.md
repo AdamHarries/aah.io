@@ -4,11 +4,11 @@ title: Computational Contemplations
 
 <!-- <img src="/images/me.jpg" style="float:left;" width="100px"/> -->
 
-Or, Adam's online babblings. This is the personal site of Adam Harries - a student and sometimes programmer from the UK. I'm a recent graduate of Durham University, where I studied Computer Science. I'm currently studying for a PhD in Informatics at the University of Edinburgh, as part of the Pervasive Parallelism EPSRC CDT. 
+This is the personal site of Adam Harries - a student and sometimes programmer from the UK. I'm a recent graduate of Durham University, where I studied Computer Science (with a theoretical focus). I'm currently studying for a PhD in Informatics at the University of Edinburgh, as part of the Pervasive Parallelism EPSRC CDT. You can find out more about me [here](/cv/).
 
 ##Research Interests
 
-I'm interested in how we can make modern programming languages as fast as possible on modern hardware. I'm particularly interested in the implementation of high level, skeletal and functional languages, especially in how we can get them to run efficiently on all sorts of hardware.
+I'm interested in the intersection between high performance parallel code and high level programming languages. Specifically, I'm interested at looking at how we can compile functional or skeletal languages to as efficient code as possible. For parallelism my main interest is in generating the best possible code for GPU execution - ideally on par with human expert written code. Programming for the GPU presents a very different programming challenge compared to traditional parallel CPU programming, and looking at how we can persuade functional compilers to generate efficient code for both architectures (and other future architectures!) is my primary interest.
 
 ##Contact me
 
@@ -16,4 +16,4 @@ I'm reachable by email at either harries.adam@gmail.com (personal), or adam.harr
 
 ##Around the web
 
-As for the rest of the web, I've got a twitter with even more inane ramblings, @harriesadam, a github account with most of my code in it, [AdamHarries](https://github.com/AdamHarries), and a bitbucket with the rest, [AdamHarries](https://bitbucket.org/AdamHarries) (again).
+As for the rest of the web, I've got a twitter where I rarely post (but often retweet), @harriesadam, a github account with most of my code in it, [AdamHarries](https://github.com/AdamHarries), and a bitbucket with the rest, [AdamHarries](https://bitbucket.org/AdamHarries) (again).
